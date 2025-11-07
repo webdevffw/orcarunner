@@ -6,16 +6,17 @@ import Job from "@lib/job";
 export const runtime = "nodejs";
 
 export class ActionController {
-  protected processStructure: any;
+  private details: IDetails;
+  private workflow: Workflow;
   private state: GlobalState = globalState;
 
-  constructor(
-    private details: IDetails,
-    protected work: Workflow,
-  ) {}
+  constructor({ details, workflow }: { details: IDetails, workflow: Workflow }) {
+    this.details = details;
+    this.workflow = workflow;
+  }
 
   executeWorker = (): JobDetails | undefined => {
-    const job = new Job(this.details, this.work);
+    const job = new Job(this.details, this.workflow);
 
     try {
       const added = this.state.addJob(job).get(job.getId())

@@ -20,13 +20,14 @@ export default class Job {
     const key = `${details.title}/${ action ? action + "/" : "" }${id}`;
     const name = `${details.title}-${ action ? action + "-" : "" }${id}`;
 
-    this.details = { id, key, name, ...details };
+    this.details = { id, key, name, ...details, status: "pending" };
     this.logger = new LoggerModule({ dir: details.logDir, file: details.logFile });
     this.runner = new Runner(id, name, this.logger.getLogger());
   }
 
   attachStream = () => this.logger.attachReadStream();
   orchestrationsStarted = () => this.details.status !== "pending";
+  getStatus = () => this.details.status;
 
   getId = () => this.details.id;
   getDetails = <T extends JobDetails>() => this.details as T;

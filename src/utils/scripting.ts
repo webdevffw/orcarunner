@@ -1,6 +1,6 @@
 import path from "path";
 import { spawn } from "child_process";
-import { IEventAction } from "@models/interfaces";
+import { IEventAction } from "../models/interfaces";
 
 export interface IRunScriptFn {
   (script: string, dirPath?: string, args?: string[], action?: IEventAction): void;

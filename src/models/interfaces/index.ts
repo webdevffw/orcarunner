@@ -1,5 +1,5 @@
 import pino from "pino";
-import { EntityState, StateCode, Validation } from "../types";
+import { EntityState, Validation } from "../types";
 
 export interface Entity {
   init(): EntityState;

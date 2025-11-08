@@ -1,7 +1,7 @@
-import { GlobalState, globalState } from "@state/jobs";
-import { IDetails } from "@models/interfaces";
-import { Workflow, JobDetails } from "@models/types";
-import Job from "@lib/job";
+import { GlobalState, globalState } from "../state/jobs";
+import { IDetails } from "../models/interfaces";
+import { Workflow, JobDetails } from "../models/types";
+import Job from "../lib/job";
 
 export const runtime = "nodejs";
 

@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { generateId } from "@utils/cryptographer";
+import { generateId } from "../utils/cryptographer";
 import { LoggerModule } from "./logger";
 import { globalState } from "../state/jobs";
 import { Runner } from "./runner";
-import { JobDetails, Workflow, Status } from "@models/types";
-import { IDetails } from "@models/interfaces";
+import { JobDetails, Workflow, Status } from "../models/types";
+import { IDetails } from "../models/interfaces";
 
 export default class Job {
   private logger: LoggerModule;

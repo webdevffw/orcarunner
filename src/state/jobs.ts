@@ -1,4 +1,4 @@
-import Job from "@lib/job";
+import Job from "../lib/job";
 
 export class GlobalState {
   jobs: Map<string, Job>;

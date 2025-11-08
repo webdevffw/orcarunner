@@ -1,6 +1,6 @@
 import pino from "pino";
-import { IOrchestrationLog } from '@models/interfaces';
-import { IWorkerPhase } from '@models/interfaces';
+import { IOrchestrationLog } from "../models/interfaces";
+import { IWorkerPhase } from "../models/interfaces";
 
 export class Runner {
   constructor(private instanceId: string, private name: string, private logger: pino.Logger) {}

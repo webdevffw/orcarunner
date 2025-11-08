@@ -3,7 +3,7 @@ import path from "path";
 import pino from 'pino';
 import chalk from 'chalk';
 import EventStream from "./stream";
-import { createLogFile } from "@modules/logger";
+import { createLogFile } from "../modules/logger";
 
 const green = chalk.green;
 const yellow = chalk.yellow;

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export const createLogFile = async ({ LOG_DIR, LOG_FILE }): Promise<string> => {
+export const createLogFile = async ({ LOG_DIR, LOG_FILE }: { LOG_DIR: string, LOG_FILE: string}): Promise<string> => {
   if (!LOG_DIR || !LOG_FILE) {
     throw new Error('Need both arguments `LOG_DIR` & `LOG_FILE`');
   }

@@ -1,4 +1,4 @@
-name: Deploy Bootstrap Script
+name: Publish Package to NPM
 
 on:
   workflow_dispatch:

@@ -1,0 +1,31 @@
+name: Deploy Bootstrap Script
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [prod]
+    tags: ["v*.*.*"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write      # Needed to publish
+      id-token: write      # Needed for provenance (recommended)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+        run: npm publish

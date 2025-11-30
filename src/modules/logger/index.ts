@@ -15,8 +15,8 @@ export const createLogFile = async ({ LOG_DIR, LOG_FILE }: { LOG_DIR: string, LO
     // Create file if it doesn't exist
     if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, '');
 
-    // Set permissions
-    fs.chmodSync(filePath, 0o666);
+    // // Set permissions
+    // fs.chmodSync(filePath, 0o666);
 
     return `✅ Log file active at ${path.join(LOG_DIR, LOG_FILE)}`;
   } catch (error: any) {

@@ -1,6 +1,6 @@
 {
   "name": "orcarunner",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Library of utility methods for managing and running orchestrations",
   "author": "Hamada",
   "type": "module",

@@ -10,7 +10,7 @@ export const createLogFile = async ({ LOG_DIR, LOG_FILE }: { LOG_DIR: string, LO
     const filePath = path.join(LOG_DIR, LOG_FILE);
 
     // Create directory recursively
-    fs.mkdirSync(LOG_DIR, { recursive: true });
+    fs.mkdirSync(LOG_DIR, { recursive: true, mode: 0o755 });
 
     // Create file if it doesn't exist
     if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, '');
